@@ -1,0 +1,39 @@
+  
+  <input class="form-control" type="text" placeholder="Search" [(ngModel)]="searchText">
+<table class="table table-hover table-striped">
+    <thead>
+      <tr>
+          <th>Customer Id</th>
+          <th>Customer Name</th>
+          <th>Machine Nr</th>
+          <th>Machine Id</th>
+          <th>Machine Type</th>
+          <th>Serial</th>
+          <th>Process</th>
+          <th>Process Time</th>
+          <th>Sensor Data</th>
+          <th>Online From</th>
+      </tr>
+    </thead>
+    <tbody>  
+      <ng-container *ngFor="let dataItem of processList | search: searchText" >    
+      <tr (click)="showDetail(dataItem)">
+        <td>{{dataItem.customerId}}</td>
+        <td>{{dataItem.customerName}}</td>
+        <td>{{dataItem.machineNr}}</td>
+        <td>{{dataItem.machineId}}</td>
+        <td>{{dataItem.machineType}}</td>
+        <td>{{dataItem.serial}}</td>
+        <td>{{dataItem.processName}}</td>
+        <td>Start Time: {{dataItem.startTime}}; End Time: {{dataItem.endTime}}</td>
+        <td>Water Temp: {{dataItem.waterTemp}} {{dataItem.waterTempUnit}};
+          Pump 10: {{dataItem.pump10 ? "On" : "Off"}};
+          Pump 5: {{dataItem.pump5 ? "On" : "Off"}};
+          Drain Sensor: {{dataItem.drainSensor ? "On" : "Off"}};
+          water Level: {{dataItem.waterLevel}} {{dataItem.waterLevelUnit}}
+        </td>
+        <td>{{dataItem.onlineFrom}}</td>
+      </tr>
+      </ng-container>
+    </tbody>
+  </table>

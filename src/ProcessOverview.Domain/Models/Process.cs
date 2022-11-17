@@ -22,11 +22,11 @@ namespace ProcessOverview.Domain.Models
         [Name("ProcessName")]
         public string ProcessName { get; set; }
         [Name("StartTime")]
-        public DateTime StartTime { get; set; }
+        public string StartTime { get; set; }
         [Name("EndTime")]
-        public DateTime EndTime { get; set; }
+        public string EndTime { get; set; }
         [Name("OnlineFrom")]
-        public DateTime OnlineFrom { get; set; }
+        public string OnlineFrom { get; set; }
         [Name("WaterTempUnit")]
         public string WaterTempUnit { get; set; }
         [Name("WaterTemp")]

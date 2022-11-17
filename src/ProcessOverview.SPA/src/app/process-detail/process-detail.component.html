@@ -1,0 +1,36 @@
+<table class="table">
+    <thead>
+        <tr>
+            <th>{{header}}</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        <ng-container *ngIf="dataItem != undefined">
+            <tr>
+                <td><b>Start Time: </b>{{dataItem.startTime}}</td>
+            </tr>
+            <tr>
+                <td><b>End Time: </b>{{dataItem.endTime}}</td>
+            </tr>
+            <tr>
+                <td><b>Water Temperature: </b>{{dataItem.waterTemp}} {{dataItem.waterTempUnit}}</td>
+            </tr>
+            <tr>
+                <td><b>Pump 10: </b>{{dataItem.pump10 ? "On" : "Off"}}</td>
+            </tr>
+            <tr>
+                <td><b>Pump 5: </b>{{dataItem.pump5 ? "On" : "Off"}}</td>
+            </tr>
+
+            <tr>
+                <td><b>Drain Sensor: </b>{{dataItem.drainSensor ? "On" : "Off"}}</td>
+            </tr>
+
+            <tr>
+                <td><b>Water Level: </b>{{dataItem.waterLevel}} {{dataItem.waterLevelUnit}}</td>
+            </tr>
+            <tr>
+                <td><b>Online From: </b>{{dataItem.onlineFrom}}</td>
+            </tr>
+            <table>

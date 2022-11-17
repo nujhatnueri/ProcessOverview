@@ -6,11 +6,10 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 
 namespace ProcessOverview.API.Repositories
 {
-    public class CsvParserService:ICsvParserRepository
+    public class CsvParserService : ICsvParserRepository
     {
         public List<Process> ReadCsvFileToProcessModel(string path)
         {
@@ -18,10 +17,10 @@ namespace ProcessOverview.API.Repositories
             {
                 using (var reader = new StreamReader(path, Encoding.Default))
                 using (var csvReader = new CsvReader(reader, System.Globalization.CultureInfo.InvariantCulture))
-                {
+                {                    
                     csvReader.Context.RegisterClassMap<ProcessMap>();
                     var records = csvReader.GetRecords<Process>().ToList();
-                    return records;
+                    return records;                    
                 }
             }
             catch (UnauthorizedAccessException e)
@@ -41,4 +40,5 @@ namespace ProcessOverview.API.Repositories
                 throw new Exception(e.Message);
             }
         }
+    }
 }
